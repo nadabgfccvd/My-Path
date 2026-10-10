@@ -1,0 +1,33 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/mp-core",
+    "crates/mp-gestures",
+    "crates/mp-input",
+    # "apps/probe/src-tauri",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/nadabgfccvd/My-Path"
+authors = ["The My Path contributors"]
+rust-version = "1.90"
+
+[workspace.dependencies]
+mp-core = { path = "crates/mp-core" }
+mp-gestures = { path = "crates/mp-gestures" }
+mp-input = { path = "crates/mp-input" }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.152"
+crossbeam-channel = "0.5.17"
+thiserror = "2.0.21"
+log = "0.4"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
+opt-level = 3
