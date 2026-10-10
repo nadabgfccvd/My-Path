@@ -4,7 +4,7 @@ members = [
     "crates/mp-core",
     "crates/mp-gestures",
     "crates/mp-input",
-    # "apps/probe/src-tauri",
+    "apps/probe/src-tauri",
 ]
 
 [workspace.package]

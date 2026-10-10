@@ -1,0 +1,49 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "My Path Probe",
+  "mainBinaryName": "mypath-probe",
+  "version": "0.1.0",
+  "identifier": "io.github.nadabgfccvd.mypath.probe",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:5173",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "My Path — Probe (Fase 1)",
+        "width": 1180,
+        "height": 820,
+        "minWidth": 860,
+        "minHeight": 600,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; connect-src ipc: http://ipc.localhost"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Utility",
+    "publisher": "My Path contributors",
+    "copyright": "© 2026 My Path contributors — MIT OR Apache-2.0",
+    "license": "MIT OR Apache-2.0",
+    "shortDescription": "Diagnóstico técnico do My Path (Fase 1)",
+    "longDescription": "Testa captura de mouse, teclado e touchpad e gera um relatório para o desenvolvimento do My Path.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": { "type": "embedBootstrapper" },
+      "nsis": { "installMode": "currentUser", "languages": ["PortugueseBR", "English"], "displayLanguageSelector": false }
+    }
+  }
+}
